@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+{%include subpage-header.html%}
+<!-- Post Content -->
+<article id="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2>{{ page.title }}</h2>
+               
+                <p class="meta">Posted by <a href="#">{{ page.author }}</a> {{ page.date | date: "%B %d, %y"}}</p>
+                {{page.content}}
+                
+                {{%if page.previous %}}
+                    <span class="previous-link">
+                        <a href="{{ page.previous.url}}">Previous article</a>
+                    </span>
+                {{%endif%}}
+            
+                {{%if page.next %}}
+                    <span class="next-link pull right">
+                        <a href="{{ page.next.url}}">Previous article</a>
+                    </span>
+                {{%endif%}}
+            </div>
+        </div>
+    </div>
+</article>
