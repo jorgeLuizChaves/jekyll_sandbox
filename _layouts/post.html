@@ -7,24 +7,35 @@ layout: default
 <article id="post">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="col-md-8 col-sm-offset-2">
                 <h2>{{ page.title }}</h2>
                
                 <p class="meta">Posted by <a href="#">{{ page.author }}</a> {{ page.date | date: "%B %d, %y"}}</p>
                 {{page.content}}
                 
-                {{%if page.previous %}}
+                {%if page.previous %}
                     <span class="previous-link">
                         <a href="{{ page.previous.url}}">Previous article</a>
                     </span>
-                {{%endif%}}
+                {%endif%}
             
-                {{%if page.next %}}
+                {%if page.next %}
                     <span class="next-link pull right">
-                        <a href="{{ page.next.url}}">Previous article</a>
+                        <a href="{{ page.next.url}}">Next article</a>
                     </span>
-                {{%endif%}}
+                {%endif%}
             </div>
+             <div class="col-sm-2">
+                {%for category_name in page.categories limit: 1%}
+                    {{category_name | capitalize}}
+                
+                    {%for post in site.categories[category_name] limit: 5%}
+                        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                    {%endfor%}
+                {%endfor%}
+            </div>
+            
         </div>
+       
     </div>
 </article>
