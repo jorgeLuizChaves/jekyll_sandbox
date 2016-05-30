@@ -6,9 +6,9 @@
                 <div class="block">
                   <div class="portfolio-menu">
                     <ul>
-                        {% assign filters = site.data.portfolio | group_by type %}
+                        {% assign filters = site.data.portfolios | group_by: 'type' %}
                         {%for filter in filters%}
-                          <li class="filter" data-filter="{{filter.name}}">{{filter.name}}</li>
+                          <li class="filter" data-filter=".{{filter.name}}">{{filter.name}}</li>
                         {%endfor%}
                     </ul>
                   </div>
