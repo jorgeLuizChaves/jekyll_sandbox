@@ -17,6 +17,9 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
 
+# to enable comments the value must be true, to disable set as false
+comments: true
+
 
 permalink: none
 
