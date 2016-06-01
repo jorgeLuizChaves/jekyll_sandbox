@@ -24,7 +24,7 @@ title: Blog
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         {% for post in site.posts %}
                         <div class="post-preview">
-                            <a href="/jekyll_sandbox/{{ post.url }}">
+                            <a href="/jekyll_sandbox{{ post.url }}">
                                 <h2>
                                     {{post.title}}
                                 </h2>
@@ -32,7 +32,7 @@ title: Blog
                                     {{post.excerpt}}
                                 </h3>
                             </a>
-                            <p class="post-meta">Posted by <a href="/jekyll_sandbox/{{post.url}}">{{post.title}}</a> on {{post.date | date: "%B %d, %y"}}</p>
+                            <p class="post-meta">Posted by <a href="/jekyll_sandbox{{post.url}}">{{post.title}}</a> on {{post.date | date: "%B %d, %y"}}</p>
                             <hr>
                         </div>
                         {%endfor%}
